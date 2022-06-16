@@ -186,7 +186,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.4k 字
+      2.8k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      12 分钟
+      24 分钟
     </span>
   
 
@@ -273,9 +273,15 @@
 <li><a href="#63-%E5%85%B6%E4%BB%96%E5%B7%A5%E5%85%B7">6.3 其他工具</a></li>
 </ul>
 </li>
-<li><a href="#8-%E7%AB%AF%E5%8F%A3%E8%AF%86%E5%88%AB">8 端口识别</a></li>
-<li><a href="#9-%E5%8F%A3%E4%BB%A4%E6%94%B6%E9%9B%86">9 口令收集</a></li>
-<li><a href="#10-%E6%80%9D%E8%B7%AF%E6%B1%87%E6%80%BB">10 思路汇总</a></li>
+<li><a href="#7-%E7%AB%AF%E5%8F%A3%E8%AF%86%E5%88%AB">7 端口识别</a><ul>
+<li><a href="#71-%E5%B8%B8%E8%A7%81%E7%AB%AF%E5%8F%A3">7.1 常见端口</a></li>
+<li><a href="#72-%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7">7.2 扫描工具</a></li>
+</ul>
+</li>
+<li><a href="#8-%E5%8F%A3%E4%BB%A4%E6%94%B6%E9%9B%86">8 口令收集</a><ul>
+<li><a href="#81-%E5%BC%B1%E5%8F%A3%E4%BB%A4%E5%AD%97%E5%85%B8%E7%9A%84%E7%94%9F%E6%88%90">8.1 弱口令字典的生成</a></li>
+</ul>
+</li>
 </ul>
 <h1 id="1-IP收集"><a href="#1-IP收集" class="headerlink" title="1 IP收集"></a>1 IP收集</h1><h2 id="1-1-判断目标有没有使用CDN"><a href="#1-1-判断目标有没有使用CDN" class="headerlink" title="1.1 判断目标有没有使用CDN"></a>1.1 判断目标有没有使用CDN</h2><p><a target="_blank" rel="noopener" href="https://ping.chinaz.com/">全球ping</a></p>
 <p>以 <code>baidu.com</code> 为例，全球ping结果显示如下，其中ip归属地皆为<code>中国北京海淀 电信</code>，但是ip地址不同，则可以确定为使用了CDN，如果结果显示ip归属地在不同地址，也可以确定为使用了CDN：</p>
@@ -393,7 +399,7 @@
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/appinfoscanner.png" srcset="/img/loading.gif" lazyload alt="appinfoscanner">  </p>
 <h1 id="4-MAIL收集"><a href="#4-MAIL收集" class="headerlink" title="4 MAIL收集"></a>4 MAIL收集</h1><p><a target="_blank" rel="noopener" href="https://hunter.io/">email猎人在线</a>  </p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E7%8C%8E%E4%BA%BA%E5%9C%A8%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="猎人在线">  </p>
-<p><a target="_blank" rel="noopener" href="https://email-format.com/i/search_result/?q=">email-format</a></p>
+<p><a target="_blank" rel="noopener" href="https://email-format.com/i/search_result/?q=">email-format</a>  </p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/email-format.png" srcset="/img/loading.gif" lazyload alt="email-format"> </p>
 <h1 id="5-WEB收集"><a href="#5-WEB收集" class="headerlink" title="5 WEB收集"></a>5 WEB收集</h1><p><a target="_blank" rel="noopener" href="https://github.com/ElevenPaths/FOCA">FOCA</a></p>
 <h1 id="6-指纹识别"><a href="#6-指纹识别" class="headerlink" title="6 指纹识别"></a>6 指纹识别</h1><h2 id="6-1-第三方网站"><a href="#6-1-第三方网站" class="headerlink" title="6.1 第三方网站"></a>6.1 第三方网站</h2><p><a href="www.yunsee.cn">云悉</a></p>
@@ -404,7 +410,262 @@
 <li>what-web</li>
 <li>finger</li>
 </ul>
-<h1 id="8-端口识别"><a href="#8-端口识别" class="headerlink" title="8 端口识别"></a>8 端口识别</h1><h1 id="9-口令收集"><a href="#9-口令收集" class="headerlink" title="9 口令收集"></a>9 口令收集</h1><h1 id="10-思路汇总"><a href="#10-思路汇总" class="headerlink" title="10 思路汇总"></a>10 思路汇总</h1>
+<h1 id="7-端口识别"><a href="#7-端口识别" class="headerlink" title="7 端口识别"></a>7 端口识别</h1><h2 id="7-1-常见端口"><a href="#7-1-常见端口" class="headerlink" title="7.1 常见端口"></a>7.1 常见端口</h2><table>
+<thead>
+<tr>
+<th>端口</th>
+<th>服务</th>
+<th>总结</th>
+<th>文档</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>21</td>
+<td>FTP&#x2F;TFTP&#x2F;VSFTPD</td>
+<td>爆破&#x2F;嗅探&#x2F;溢出&#x2F;后门</td>
+<td></td>
+</tr>
+<tr>
+<td>22</td>
+<td>SSH远程连接</td>
+<td>爆破&#x2F;openssh漏洞</td>
+<td></td>
+</tr>
+<tr>
+<td>23</td>
+<td>TELNET远程连接</td>
+<td>爆破&#x2F;嗅探&#x2F;弱口令</td>
+<td></td>
+</tr>
+<tr>
+<td>25</td>
+<td>SMTP邮件服务</td>
+<td>邮件伪造</td>
+<td></td>
+</tr>
+<tr>
+<td>53</td>
+<td>DNS域名解析系统</td>
+<td>域传送&#x2F;劫持&#x2F;缓存投毒&#x2F;欺骗</td>
+<td></td>
+</tr>
+<tr>
+<td>67&#x2F;68</td>
+<td>dhcp服务</td>
+<td>劫持&#x2F;欺骗</td>
+<td></td>
+</tr>
+<tr>
+<td>110</td>
+<td>pop3</td>
+<td>爆破&#x2F;嗅探</td>
+<td></td>
+</tr>
+<tr>
+<td>139</td>
+<td>samba服务</td>
+<td>爆破&#x2F;未授权访问&#x2F;远程命令执行</td>
+<td></td>
+</tr>
+<tr>
+<td>143</td>
+<td>Imap协议</td>
+<td>爆破JGSNMP协议爆破&#x2F;搜集目标内网信息</td>
+<td></td>
+</tr>
+<tr>
+<td>389</td>
+<td>Ldap目录访问协议</td>
+<td>注入&#x2F;未授权访问&#x2F;弱口令</td>
+<td></td>
+</tr>
+<tr>
+<td>445</td>
+<td>smb</td>
+<td>ms17-010端口溢出</td>
+<td></td>
+</tr>
+<tr>
+<td>512&#x2F;513&#x2F;514</td>
+<td>Linux Rexec服务</td>
+<td>爆破&#x2F;Rlogin登陆</td>
+<td></td>
+</tr>
+<tr>
+<td>873</td>
+<td>Rsyxc服务</td>
+<td>文件上传&#x2F;未授权访问</td>
+<td></td>
+</tr>
+<tr>
+<td>1080</td>
+<td>socket</td>
+<td>爆破</td>
+<td></td>
+</tr>
+<tr>
+<td>1352</td>
+<td>Lotus domino邮件服务</td>
+<td>爆破&#x2F;信息泄漏</td>
+<td></td>
+</tr>
+<tr>
+<td>1433</td>
+<td>mssql</td>
+<td>爆破&#x2F;注入&#x2F;SA弱口令</td>
+<td></td>
+</tr>
+<tr>
+<td>1521</td>
+<td>oracle</td>
+<td>爆破&#x2F;注入&#x2F;TNS爆破&#x2F;反弹shell2O49NfS服务配置不当</td>
+<td></td>
+</tr>
+<tr>
+<td>2181</td>
+<td>zookeeper服务</td>
+<td>未授权访问</td>
+<td></td>
+</tr>
+<tr>
+<td>2375</td>
+<td>docker remote api</td>
+<td>未授权访问</td>
+<td></td>
+</tr>
+<tr>
+<td>3306</td>
+<td>mysql</td>
+<td>爆破&#x2F;注入</td>
+<td></td>
+</tr>
+<tr>
+<td>3389</td>
+<td>Rdp远程桌面链接</td>
+<td>爆破&#x2F;shfit后门</td>
+<td></td>
+</tr>
+<tr>
+<td>4848</td>
+<td>GassFish控制台</td>
+<td>爆破&#x2F;认证绕过</td>
+<td></td>
+</tr>
+<tr>
+<td>5000</td>
+<td>sybase&#x2F;DB2数据库</td>
+<td>爆破&#x2F;注入&#x2F;提权</td>
+<td></td>
+</tr>
+<tr>
+<td>5432</td>
+<td>postgresql</td>
+<td>爆破&#x2F;注入&#x2F;缓冲区溢出</td>
+<td></td>
+</tr>
+<tr>
+<td>5632</td>
+<td>pcanywhere服务</td>
+<td>抓密码&#x2F;代码执行</td>
+<td></td>
+</tr>
+<tr>
+<td>5900</td>
+<td>vnc</td>
+<td>爆破&#x2F;认证绕过</td>
+<td></td>
+</tr>
+<tr>
+<td>6379</td>
+<td>Redis数据库</td>
+<td>未授权访问&#x2F;爆破</td>
+<td></td>
+</tr>
+<tr>
+<td>7001&#x2F;7002</td>
+<td>weblogic</td>
+<td>反序列化&#x2F;控制台弱口令</td>
+<td></td>
+</tr>
+<tr>
+<td>80&#x2F;443</td>
+<td>http&#x2F;https</td>
+<td>web应用漏洞&#x2F;心脏滴血</td>
+<td></td>
+</tr>
+<tr>
+<td>8069</td>
+<td>zabbix服务</td>
+<td>远程命令执行&#x2F;注入</td>
+<td></td>
+</tr>
+<tr>
+<td>8161</td>
+<td>activemq</td>
+<td>弱口令&#x2F;写文件</td>
+<td></td>
+</tr>
+<tr>
+<td>8080&#x2F;8089</td>
+<td>Jboss&#x2F;Tomcat&#x2F;Resin</td>
+<td>爆破&#x2F;PUT文件上传&#x2F;反序列化</td>
+<td></td>
+</tr>
+<tr>
+<td>8083&#x2F;8086</td>
+<td>influxDB</td>
+<td>未授权访问</td>
+<td></td>
+</tr>
+<tr>
+<td>9000</td>
+<td>fastcgi</td>
+<td>远程命令执行</td>
+<td></td>
+</tr>
+<tr>
+<td>9090</td>
+<td>Websphere</td>
+<td>控制台爆破&#x2F;java反序列化&#x2F;弱口令</td>
+<td></td>
+</tr>
+<tr>
+<td>9200&#x2F;9300</td>
+<td>elasticsearch</td>
+<td>远程代码执行</td>
+<td></td>
+</tr>
+<tr>
+<td>11211</td>
+<td>memcached</td>
+<td>未授权访问</td>
+<td></td>
+</tr>
+<tr>
+<td>27017&#x2F;27018</td>
+<td>mongodb</td>
+<td>未授权访问&#x2F;爆破</td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="7-2-扫描工具"><a href="#7-2-扫描工具" class="headerlink" title="7.2 扫描工具"></a>7.2 扫描工具</h2><ul>
+<li>scanport</li>
+<li>nmap</li>
+<li>masscan</li>
+<li>masnmapscan</li>
+<li>zmap</li>
+<li>御剑高速TCP端口扫描工具</li>
+<li>御剑高速端口扫描工具</li>
+<li>IISPutScanner</li>
+<li>IISPutScanner增强版-DotNetScan</li>
+</ul>
+<h1 id="8-口令收集"><a href="#8-口令收集" class="headerlink" title="8 口令收集"></a>8 口令收集</h1><h2 id="8-1-弱口令字典的生成"><a href="#8-1-弱口令字典的生成" class="headerlink" title="8.1 弱口令字典的生成"></a>8.1 弱口令字典的生成</h2><ul>
+<li><p>针对个人信息生成针对个人的密码字典<br><a target="_blank" rel="noopener" href="https://www.bugku.com/mima/">CTF密码生成器</a></p>
+</li>
+<li><p>白鹿社工字典生成器<br><a target="_blank" rel="noopener" href="https://github.com/x311/BaiLu-SED-Tool">白鹿社工字典生成器</a></p>
+</li>
+</ul>
+
             </div>
             <hr>
             <div>

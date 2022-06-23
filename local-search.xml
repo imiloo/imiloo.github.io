@@ -4,6 +4,39 @@
   
   
   <entry>
+    <title>经典漏洞-弱口令</title>
+    <link href="/2022/06/17/2022-06-17.%E7%BB%8F%E5%85%B8%E6%BC%8F%E6%B4%9E-%E5%BC%B1%E5%8F%A3%E4%BB%A4/"/>
+    <url>/2022/06/17/2022-06-17.%E7%BB%8F%E5%85%B8%E6%BC%8F%E6%B4%9E-%E5%BC%B1%E5%8F%A3%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<ul><li><a href="#1-%E9%BB%98%E8%AE%A4%E5%BC%B1%E5%8F%A3%E4%BB%A4">1 默认弱口令</a><ul><li><a href="#11-web%E5%AE%B9%E5%99%A8%E5%90%8E%E5%8F%B0%E5%BC%B1%E5%8F%A3%E4%BB%A4">1.1 web容器后台弱口令</a></li><li><a href="#12-%E5%AE%89%E5%85%A8%E8%AE%BE%E5%A4%87%E5%BC%B1%E5%8F%A3%E4%BB%A4">1.2 安全设备弱口令</a></li></ul></li><li><a href="#2-%E5%AE%9E%E6%88%98%E6%80%9D%E8%B7%AF">2 实战思路</a><ul><li><a href="#21-%E5%AD%97%E5%85%B8%E7%94%9F%E6%88%90">2.1 字典生成</a></li><li><a href="#22-%E6%89%B9%E9%87%8F%E7%88%86%E7%A0%B4%E5%B7%A5%E5%85%B7">2.2 批量爆破工具</a></li></ul></li></ul><h1 id="1-默认弱口令"><a href="#1-默认弱口令" class="headerlink" title="1 默认弱口令"></a>1 默认弱口令</h1><h2 id="1-1-web容器后台弱口令"><a href="#1-1-web容器后台弱口令" class="headerlink" title="1.1 web容器后台弱口令"></a>1.1 web容器后台弱口令</h2><table><thead><tr><th>常见中间件</th><th>管理端口</th><th>后台地址</th><th>默认账号名密码</th></tr></thead><tbody><tr><td>Jboss</td><td>8080</td><td><a href="http://ip:8080/web-console/">http://ip:8080/web-console/</a><br><a href="http://ip:8080/jmx-console/">http://ip:8080/jmx-console/</a><br><a href="http://ip:8080/console">http://ip:8080/console</a></td><td>admin&#x2F;admin</td></tr><tr><td>WebSphere</td><td>9060(控制台端口)<br>9043<br>9080<br>9443<br>2809<br>5060<br>5061<br>8880<br>9401<br>9403<br>9402<br>9100<br>9353<br>7276<br>7286<br>5558<br>5578</td><td><a href="http://ip:9060/ibm/console/">http://ip:9060/ibm/console/</a></td><td>默认没有鉴权页面</td></tr><tr><td>Weblogic</td><td>7001(http管理控制端口)<br>7002(https管理控制端口)</td><td><a href="http://ip:7001/console">http://ip:7001/console</a></td><td>weblogic&#x2F;weblogic1<br>weblogic&#x2F;weblogic<br>system&#x2F;system<br>portaladmin&#x2F;portaladmin<br>guest&#x2F;guest</td></tr><tr><td>Tomcat</td><td>8080</td><td><a href="http://ip:8080/manager/html">http://ip:8080/manager/html</a></td><td>tomcat&#x2F;tomcat<br>both&#x2F;tomcat<br>role1&#x2F;tomcat<br>manager&#x2F;admin</td></tr></tbody></table><h2 id="1-2-安全设备弱口令"><a href="#1-2-安全设备弱口令" class="headerlink" title="1.2 安全设备弱口令"></a>1.2 安全设备弱口令</h2><table><thead><tr><th>产品</th><th>登录地址</th><th>默认账号名密码</th><th>技术支持热线</th></tr></thead><tbody><tr><td>天融信防火墙</td><td><a href="https://192.168.1.254/">https://192.168.1.254</a><br><a href="https://192.168.1.254:8080/">https://192.168.1.254:8080</a></td><td>superman&#x2F;talent<br>superman&#x2F;talent!23</td><td>8008105119</td></tr><tr><td>联想网御防火墙(需要证书)</td><td><a href="https://10.1.5.254:8889/">https://10.1.5.254:8889</a></td><td>admin&#x2F;leadsec@7766<br>admin&#x2F;administrator<br>admin&#x2F;bane@7766</td><td>4008107766<br>01056632666</td></tr><tr><td>深信服防火墙</td><td><a href="https://10.251.251.251/">https://10.251.251.251</a><br><a href="https://10.254.254.254/">https://10.254.254.254</a></td><td>admin&#x2F;admin</td><td>4006306430</td></tr><tr><td>启明星辰</td><td><a href="https://10.1.5.254:8889/">https://10.1.5.254:8889</a><br><a href="https://10.50.10.45:8889/">https://10.50.10.45:8889</a></td><td>admin&#x2F;bane＠7766 admin&#x2F;admin＠123</td><td>10.50.10.44&#x2F;255.255.255.0<br>技术支持热线:4006243900</td></tr><tr><td>juniper</td><td><a href="https://192.168.1.1/">https://192.168.1.1</a></td><td>netscreen&#x2F;netscreen</td><td></td></tr><tr><td>Cisco</td><td><a href="https://192.168.0.1/">https://192.168.0.1</a></td><td>admin&#x2F;cisco</td><td></td></tr><tr><td>Huawei</td><td><a href="http://192.168.0.1/">http://192.168.0.1</a></td><td>admin&#x2F;Admin＠123</td><td></td></tr><tr><td>H3C</td><td><a href="http://192.168.0.1/">http://192.168.0.1</a></td><td>admin&#x2F;admin</td><td>4006306430</td></tr><tr><td>绿盟IPS</td><td><a href="https://192.168.1.101/">https://192.168.1.101</a></td><td>weboper&#x2F;weboper</td><td>配置重启生效</td></tr><tr><td>网神防火墙GE1口</td><td><a href="https://10.50.10.45/">https://10.50.10.45</a></td><td>admin&#x2F;firewall</td><td>4006108220</td></tr><tr><td>深信服VPN</td><td>51111端口</td><td>delanrecover</td><td></td></tr><tr><td>华为VPN</td><td></td><td>root&#x2F;mduadmin</td><td></td></tr><tr><td>华为防火墙</td><td></td><td>admin&#x2F;Admin＠123<br>eudemon&#x2F;eudemon</td><td></td></tr><tr><td>Juniper防火墙</td><td></td><td>netscreen&#x2F;netscreen</td><td></td></tr><tr><td>迪普</td><td>192.168.0.1</td><td>admin／admin＿default</td><td></td></tr><tr><td>山石</td><td>192.168.1.1</td><td>hillstone&#x2F;hillstone</td><td></td></tr><tr><td>安恒的明御防火墙</td><td></td><td>admin／adminadmin</td><td></td></tr><tr><td>某堡垒机</td><td></td><td>shterm／shterm</td><td></td></tr><tr><td>天融信的vpn</td><td></td><td>test／123456</td><td></td></tr></tbody></table><h1 id="2-实战思路"><a href="#2-实战思路" class="headerlink" title="2 实战思路"></a>2 实战思路</h1><ul><li>授权项目</li></ul><ol><li>ip地址</li><li>踩点获得人员姓名及生日</li></ol><h2 id="2-1-字典生成"><a href="#2-1-字典生成" class="headerlink" title="2.1 字典生成"></a>2.1 字典生成</h2><ul><li>人员姓名大小写加生日的弱口令</li><li>常规弱口令</li></ul><h2 id="2-2-批量爆破工具"><a href="#2-2-批量爆破工具" class="headerlink" title="2.2 批量爆破工具"></a>2.2 批量爆破工具</h2><ul><li>SNETCracker</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Security</category>
+      
+      <category>PenTest</category>
+      
+      <category>经典漏洞</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Security</tag>
+      
+      <tag>PenTest</tag>
+      
+      <tag>经典漏洞</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>信息收集</title>
     <link href="/2022/05/30/2022-05-30.%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
     <url>/2022/05/30/2022-05-30.%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>

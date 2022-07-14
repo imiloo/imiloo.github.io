@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-30 20:46" pubdate>
-          2022年5月30日 晚上
+        <time datetime="2022-05-30 10:46" pubdate>
+          2022年5月30日 上午
         </time>
       </span>
     
@@ -282,7 +282,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2022年6月16日 上午
+                    本文最后更新于：2022年6月16日 下午
                   
                 
               </p>
@@ -318,7 +318,7 @@
 </ul>
 </li>
 <li><a href="#3-app%E6%94%B6%E9%9B%86">3 APP收集</a><ul>
-<li><a href="#31-app%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%92%8C%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC">3.1 <code>app</code>信息收集和历史版本</a></li>
+<li><a href="#31-app%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E5%92%8C%E5%8E%86%E5%8F%B2%E7%89%88%E6%9C%AC">3.1 app信息收集和历史版本</a></li>
 <li><a href="#32-%E5%B7%A5%E5%85%B7">3.2 工具</a></li>
 </ul>
 </li>
@@ -341,7 +341,7 @@
 </li>
 </ul>
 <h1 id="1-IP收集"><a href="#1-IP收集" class="headerlink" title="1 IP收集"></a>1 IP收集</h1><h2 id="1-1-判断目标有没有使用CDN"><a href="#1-1-判断目标有没有使用CDN" class="headerlink" title="1.1 判断目标有没有使用CDN"></a>1.1 判断目标有没有使用CDN</h2><p><a target="_blank" rel="noopener" href="https://ping.chinaz.com/">全球ping</a></p>
-<p>以 <code>baidu.com</code> 为例，全球ping结果显示如下，其中ip归属地皆为<code>中国北京海淀 电信</code>，但是ip地址不同，则可以确定为使用了CDN，如果结果显示ip归属地在不同地址，也可以确定为使用了CDN：</p>
+<p>以 baidu.com 为例，全球ping结果显示如下，其中ip归属地皆为中国北京海淀 电信，但是ip地址不同，则可以确定为使用了CDN，如果结果显示ip归属地在不同地址，也可以确定为使用了CDN：</p>
 <table>
 <thead>
 <tr>
@@ -389,26 +389,25 @@
 <h2 id="1-2-查找真实IP"><a href="#1-2-查找真实IP" class="headerlink" title="1.2 查找真实IP"></a>1.2 查找真实IP</h2><blockquote>
 <p>Tips:找到真实ip，绑定host，可以打开目标网站就是真实ip</p>
 </blockquote>
-<h3 id="1-2-1-大数据网络搜索平台"><a href="#1-2-1-大数据网络搜索平台" class="headerlink" title="1.2.1 大数据网络搜索平台"></a>1.2.1 大数据网络搜索平台</h3><p>以有道为例：</p>
-<p><a target="_blank" rel="noopener" href="https://zoomeye.org/">钟馗之眼</a></p>
+<h3 id="1-2-1-大数据网络搜索平台"><a href="#1-2-1-大数据网络搜索平台" class="headerlink" title="1.2.1 大数据网络搜索平台"></a>1.2.1 大数据网络搜索平台</h3><p><a target="_blank" rel="noopener" href="https://zoomeye.org/">钟馗之眼</a></p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E9%92%9F%E9%A6%97%E4%B9%8B%E7%9C%BC.png" srcset="/img/loading.gif" lazyload alt="钟馗之眼"></p>
 <p><a target="_blank" rel="noopener" href="https://www.censys.io/">censys</a></p>
 <p><a target="_blank" rel="noopener" href="https://fofa.info/">FOFA</a></p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/fofa.png" srcset="/img/loading.gif" lazyload alt="fofa"></p>
-<p><a target="_blank" rel="noopener" href="https://www.shodan.io/">shodan</a></p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/shodan.png" srcset="/img/loading.gif" lazyload alt="shodan"></p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/fofa.png" srcset="/img/loading.gif" lazyload alt="FOFA"></p>
+<p><a href="%5Bshodan%5D(https://www.shodan.io/)">shodan</a></p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/shodan.png" srcset="/img/loading.gif" lazyload alt="shoda"></p>
 <h3 id="1-2-2-历史DNS记录"><a href="#1-2-2-历史DNS记录" class="headerlink" title="1.2.2 历史DNS记录"></a>1.2.2 历史DNS记录</h3><blockquote>
-<p>最早解析的ip地址为真实ip地址，(可能会存在使用CDN前的ip地址)  </p>
+<p>最早解析的ip地址为真实ip地址，(可能会存在使用CDN前的ip地址)</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn">全球DNS搜索引擎</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://dnsdb.io/zh-cn">全球DNS搜索引擎</a></p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E5%85%A8%E7%90%83DNS%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E.png" srcset="/img/loading.gif" lazyload alt="全球DNS搜索引擎"></p>
-<p><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">情报社区</a>  </p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E5%BE%AE%E6%AD%A5%E5%9C%A8%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="微步在线"></p>
-<p><a target="_blank" rel="noopener" href="https://toolbar.netcraft.com/site_report?url=">Netcraft</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://x.threatbook.cn/">情报社区</a></p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E5%BE%AE%E6%AD%A5%E5%9C%A8%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="情报社区"></p>
+<p><a target="_blank" rel="noopener" href="https://toolbar.netcraft.com/site_report?url=">Netcraft</a></p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/Netcraft.png" srcset="/img/loading.gif" lazyload alt="Netcraft"></p>
-<p><a target="_blank" rel="noopener" href="http://viewdns.info/">viewdnsinfo</a>  </p>
-<p><a target="_blank" rel="noopener" href="https://github.com/3xp10it/xcdn">xcdn</a>  </p>
-<p><a target="_blank" rel="noopener" href="http://bobao.360.cn/learning/detail/221.html">zmap</a>  </p>
+<p><a target="_blank" rel="noopener" href="http://viewdns.info/">viewdnsinfo</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/3xp10it/xcdn">xcdn</a></p>
+<p><a target="_blank" rel="noopener" href="http://bobao.360.cn/learning/detail/221.html">zmap</a></p>
 <h3 id="1-2-3-主动连接暴露的真实ip"><a href="#1-2-3-主动连接暴露的真实ip" class="headerlink" title="1.2.3 主动连接暴露的真实ip"></a>1.2.3 主动连接暴露的真实ip</h3><ul>
 <li>注册网站邮件验证(显示邮件原文，from字段为真实ip)</li>
 <li>RSS</li>
@@ -416,22 +415,22 @@
 </ul>
 <h3 id="1-2-4-国外代理访问"><a href="#1-2-4-国外代理访问" class="headerlink" title="1.2.4 国外代理访问"></a>1.2.4 国外代理访问</h3><p>国内的CDN往往只针对国内用户访问加速，有时候通过国外的DNS解析可以得到真实IP</p>
 <h3 id="1-2-5-纯真ip数据库"><a href="#1-2-5-纯真ip数据库" class="headerlink" title="1.2.5 纯真ip数据库"></a>1.2.5 纯真ip数据库</h3><h2 id="1-3-IP信息收集"><a href="#1-3-IP信息收集" class="headerlink" title="1.3 IP信息收集"></a>1.3 IP信息收集</h2><h3 id="1-3-1-IP-段整理"><a href="#1-3-1-IP-段整理" class="headerlink" title="1.3.1 IP 段整理"></a>1.3.1 IP 段整理</h3><p><a target="_blank" rel="noopener" href="https://ipwhois.cnnic.net.cn/">CNNICIP</a></p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/ip%E6%AE%B5.png" srcset="/img/loading.gif" lazyload alt="ip段"></p>
-<h3 id="1-3-2-C段、旁站"><a href="#1-3-2-C段、旁站" class="headerlink" title="1.3.2 C段、旁站"></a>1.3.2 C段、旁站</h3><p><a target="_blank" rel="noopener" href="http://www.webscan.cc/">WebScan</a>  </p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/ip%E6%AE%B5.png" srcset="/img/loading.gif" lazyload alt="CNNICIP"></p>
+<h3 id="1-3-2-C段、旁站"><a href="#1-3-2-C段、旁站" class="headerlink" title="1.3.2 C段、旁站"></a>1.3.2 C段、旁站</h3><p><a target="_blank" rel="noopener" href="http://www.webscan.cc/">WebScan</a></p>
 <p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/WebScan.png" srcset="/img/loading.gif" lazyload alt="WebScan"></p>
-<p><a target="_blank" rel="noopener" href="https://chapangzhan.com/">查旁站</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://chapangzhan.com/">查旁站</a></p>
 <h2 id="1-4-搜索引擎"><a href="#1-4-搜索引擎" class="headerlink" title="1.4 搜索引擎"></a>1.4 搜索引擎</h2><p><a target="_blank" rel="noopener" href="https://scholar.google.com.ph/">google学术</a></p>
 <h1 id="2-域名、子域名收集"><a href="#2-域名、子域名收集" class="headerlink" title="2 域名、子域名收集"></a>2 域名、子域名收集</h1><h2 id="2-1-域名的备案号"><a href="#2-1-域名的备案号" class="headerlink" title="2.1 域名的备案号"></a>2.1 域名的备案号</h2><p><a href="icp.chinaz.com">chinaz</a></p>
-<h2 id="2-2-子域名工具"><a href="#2-2-子域名工具" class="headerlink" title="2.2 子域名工具"></a>2.2 子域名工具</h2><ol>
+<h2 id="2-2-子域名工具"><a href="#2-2-子域名工具" class="headerlink" title="2.2 子域名工具"></a>2.2 子域名工具</h2><ul>
 <li>子域名挖掘机Layer</li>
 <li>Sublist3r</li>
 <li>oneforall</li>
-</ol>
+</ul>
 <h2 id="2-3-在线子域名接口"><a href="#2-3-在线子域名接口" class="headerlink" title="2.3 在线子域名接口"></a>2.3 在线子域名接口</h2><ol>
-<li><a target="_blank" rel="noopener" href="https://securitytrails.com/list/apex_domain">https://securitytrails.com/list/apex_domain</a>  </li>
-<li><a target="_blank" rel="noopener" href="http://ce.baidu.com/index/getRelatedSites">http://ce.baidu.com/index/getRelatedSites</a>  </li>
-<li><a target="_blank" rel="noopener" href="https://dnsdumpster.com/">https://dnsdumpster.com/</a>  </li>
-<li><a target="_blank" rel="noopener" href="https://findsubdomains.com/">https://findsubdomains.com/</a>  </li>
+<li><a target="_blank" rel="noopener" href="https://securitytrails.com/list/apex_domain">https://securitytrails.com/list/apex_domain</a></li>
+<li><a target="_blank" rel="noopener" href="http://ce.baidu.com/index/getRelatedSites">http://ce.baidu.com/index/getRelatedSites</a></li>
+<li><a target="_blank" rel="noopener" href="https://dnsdumpster.com/">https://dnsdumpster.com/</a></li>
+<li><a target="_blank" rel="noopener" href="https://findsubdomains.com/">https://findsubdomains.com/</a></li>
 <li><a target="_blank" rel="noopener" href="https://dnslytics.com/domain">https://dnslytics.com/domain</a></li>
 </ol>
 <h2 id="2-4-其他泄露信息"><a href="#2-4-其他泄露信息" class="headerlink" title="2.4 其他泄露信息"></a>2.4 其他泄露信息</h2><ol>
@@ -443,21 +442,21 @@
 <li>不安全的站点，浏览器证书信息泄露</li>
 <li>dnsdumpster.com</li>
 </ol>
-<h1 id="3-APP收集"><a href="#3-APP收集" class="headerlink" title="3 APP收集"></a>3 APP收集</h1><h2 id="3-1-app信息收集和历史版本"><a href="#3-1-app信息收集和历史版本" class="headerlink" title="3.1 app信息收集和历史版本"></a>3.1 <code>app</code>信息收集和历史版本</h2><ul>
+<h1 id="3-APP收集"><a href="#3-APP收集" class="headerlink" title="3 APP收集"></a>3 APP收集</h1><h2 id="3-1-app信息收集和历史版本"><a href="#3-1-app信息收集和历史版本" class="headerlink" title="3.1 app信息收集和历史版本"></a>3.1 app信息收集和历史版本</h2><ul>
 <li>ios：同公司的其他产品</li>
 <li>android：酷安、碗豆荚等</li>
 </ul>
 <h2 id="3-2-工具"><a href="#3-2-工具" class="headerlink" title="3.2 工具"></a>3.2 工具</h2><blockquote>
-<p>未加密的app会扫描出大量可注入链接  </p>
+<p>未加密的app会扫描出大量可注入链接</p>
 </blockquote>
 <ul>
 <li>appinfoscanner</li>
 </ul>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/appinfoscanner.png" srcset="/img/loading.gif" lazyload alt="appinfoscanner">  </p>
-<h1 id="4-MAIL收集"><a href="#4-MAIL收集" class="headerlink" title="4 MAIL收集"></a>4 MAIL收集</h1><p><a target="_blank" rel="noopener" href="https://hunter.io/">email猎人在线</a>  </p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E7%8C%8E%E4%BA%BA%E5%9C%A8%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="猎人在线">  </p>
-<p><a target="_blank" rel="noopener" href="https://email-format.com/i/search_result/?q=">email-format</a>  </p>
-<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/email-format.png" srcset="/img/loading.gif" lazyload alt="email-format"> </p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/appinfoscanner.png" srcset="/img/loading.gif" lazyload alt="appinfoscanner"></p>
+<h1 id="4-MAIL收集"><a href="#4-MAIL收集" class="headerlink" title="4 MAIL收集"></a>4 MAIL收集</h1><p><a target="_blank" rel="noopener" href="https://hunter.io/">email猎人在线</a></p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/%E7%8C%8E%E4%BA%BA%E5%9C%A8%E7%BA%BF.png" srcset="/img/loading.gif" lazyload alt="email猎人在线"></p>
+<p><a target="_blank" rel="noopener" href="https://email-format.com/i/search_result/?q=">email-format</a></p>
+<p><img src="/img/article/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/email-format.png" srcset="/img/loading.gif" lazyload alt="email-format"></p>
 <h1 id="5-WEB收集"><a href="#5-WEB收集" class="headerlink" title="5 WEB收集"></a>5 WEB收集</h1><p><a target="_blank" rel="noopener" href="https://github.com/ElevenPaths/FOCA">FOCA</a></p>
 <h1 id="6-指纹识别"><a href="#6-指纹识别" class="headerlink" title="6 指纹识别"></a>6 指纹识别</h1><h2 id="6-1-第三方网站"><a href="#6-1-第三方网站" class="headerlink" title="6.1 第三方网站"></a>6.1 第三方网站</h2><p><a href="www.yunsee.cn">云悉</a></p>
 <h2 id="6-2-浏览器插件"><a href="#6-2-浏览器插件" class="headerlink" title="6.2 浏览器插件"></a>6.2 浏览器插件</h2><ul>
@@ -717,11 +716,13 @@
 <li>IISPutScanner增强版-DotNetScan</li>
 </ul>
 <h1 id="8-口令收集"><a href="#8-口令收集" class="headerlink" title="8 口令收集"></a>8 口令收集</h1><h2 id="8-1-弱口令字典的生成"><a href="#8-1-弱口令字典的生成" class="headerlink" title="8.1 弱口令字典的生成"></a>8.1 弱口令字典的生成</h2><ul>
-<li><p>针对个人信息生成针对个人的密码字典<br><a target="_blank" rel="noopener" href="https://www.bugku.com/mima/">CTF密码生成器</a></p>
-</li>
-<li><p>白鹿社工字典生成器<br><a target="_blank" rel="noopener" href="https://github.com/x311/BaiLu-SED-Tool">白鹿社工字典生成器</a></p>
-</li>
+<li>针对个人信息生成针对个人的密码字典</li>
 </ul>
+<p><a target="_blank" rel="noopener" href="https://www.bugku.com/mima/">CTF密码生成器</a></p>
+<ul>
+<li>白鹿社工字典生成器</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/x311/BaiLu-SED-Tool">白鹿社工字典生成器</a></p>
 
                 
               </div>

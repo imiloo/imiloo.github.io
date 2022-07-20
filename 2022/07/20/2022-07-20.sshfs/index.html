@@ -16,13 +16,13 @@
   <meta name="author" content="miloo">
   <meta name="keywords" content="">
   
-    <meta name="description" content="kvm显卡直通配置过程……">
+    <meta name="description" content="sshfs sshfs client">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>kvm 显卡直通 - miloo&#39;s blog</title>
+  <title>sshfs配置 - miloo&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -202,7 +202,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="kvm 显卡直通"></span>
+            <span id="subtitle" data-typed-text="sshfs配置"></span>
           
         </div>
 
@@ -213,8 +213,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-07-14 10:46" pubdate>
-          2022年7月14日 上午
+        <time datetime="2022-07-20 10:46" pubdate>
+          2022年7月20日 上午
         </time>
       </span>
     
@@ -226,7 +226,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          2 字
+          1.6k 字
         
       </span>
     
@@ -238,7 +238,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          14 分钟
         
       </span>
     
@@ -276,24 +276,31 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">kvm 显卡直通</h1>
-            
-              <p class="note note-info">
-                
-                  
-                    <!-- compatible with older versions-->
-                    本文最后更新于：2022年7月15日 下午
-                  
-                
-              </p>
+            <h1 style="display: none">sshfs配置</h1>
             
             
               <div class="markdown-body">
                 
                 <ul>
-<li><a href="#a">a</a></li>
+<li><a href="#1-server-%E7%AB%AF%E9%85%8D%E7%BD%AE">1 server 端配置</a></li>
+<li><a href="#2-client-%E7%AB%AF">2 client 端</a><ul>
+<li><a href="#21-linux-%E6%8C%82%E8%BD%BD">2.1 linux 挂载</a></li>
+<li><a href="#22-windows-%E6%8C%82%E8%BD%BD">2.2 windows 挂载</a></li>
 </ul>
-<h1 id="a"><a href="#a" class="headerlink" title="a"></a>a</h1>
+</li>
+</ul>
+<h1 id="1-server-端配置"><a href="#1-server-端配置" class="headerlink" title="1 server 端配置"></a>1 server 端配置</h1><p>配置 <code>server</code> 端 <code>/etc/ssh/sshd_config</code> 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash">PermitRootLogin <span class="hljs-built_in">yes</span><br>PubkeyAuthentication <span class="hljs-built_in">yes</span><br>PasswordAuthentication no<br><span class="hljs-comment"># 防止ssh超时断开连接，开启下列两项</span><br>ClientAliveInterval 120<br>ClientAliveCountMax 3<br></code></pre></td></tr></table></figure>
+
+<h1 id="2-client-端"><a href="#2-client-端" class="headerlink" title="2 client 端"></a>2 client 端</h1><h2 id="2-1-linux-挂载"><a href="#2-1-linux-挂载" class="headerlink" title="2.1 linux 挂载"></a>2.1 linux 挂载</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo sshfs 用户@ip:server端路径 client端挂载路径 -o reconnect -o cache=<span class="hljs-built_in">yes</span> -o port=ssh端口号 -o <span class="hljs-built_in">users</span> -o allow_other<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-2-windows-挂载"><a href="#2-2-windows-挂载" class="headerlink" title="2.2 windows 挂载"></a>2.2 windows 挂载</h2><p>安装以下工具：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/billziss-gh/sshfs-win/releases">sshfs-win</a><br><a target="_blank" rel="noopener" href="https://github.com/billziss-gh/winfsp/releases">winfsp</a><br><a target="_blank" rel="noopener" href="https://github.com/evsar3/sshfs-win-manager/releases">SSHFS-Win Manager</a></p>
+<p>配置文件位置 <code>C:\Users\用户\AppData\Roaming\sshfs-win-manager\vuex.json</code> </p>
+<figure class="highlight wren"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs wren">&#123;<br>	<span class="hljs-string">&quot;state&quot;</span>: &#123;<br>		<span class="hljs-string">&quot;Data&quot;</span>: &#123;<br>			<span class="hljs-string">&quot;connections&quot;</span>: [<br>				&#123;<br>					<span class="hljs-string">&quot;advanced&quot;</span>: &#123;<br>						<span class="hljs-string">&quot;connectOnStartup&quot;</span>: <span class="hljs-literal">false</span>,<br>						<span class="hljs-string">&quot;customCmdlOptions&quot;</span>: [],<br>						<span class="hljs-string">&quot;customCmdlOptionsEnabled&quot;</span>: <span class="hljs-literal">false</span>,<br>						<span class="hljs-string">&quot;reconnect&quot;</span>: <span class="hljs-literal">false</span><br>					&#125;,<br>					<span class="hljs-string">&quot;authType&quot;</span>: <span class="hljs-string">&quot;key-file&quot;</span>,<br>					<span class="hljs-string">&quot;folder&quot;</span>: <span class="hljs-string">&quot;/0.main&quot;</span>,<br>					<span class="hljs-string">&quot;host&quot;</span>: <span class="hljs-string">&quot;ip&quot;</span>,<br>					<span class="hljs-string">&quot;key&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>					<span class="hljs-string">&quot;keyFile&quot;</span>: <span class="hljs-string">&quot;C:<span class="hljs-char escape_">\\</span>Users<span class="hljs-char escape_">\\</span>用户<span class="hljs-char escape_">\\</span>.ssh<span class="hljs-char escape_">\\</span>id_rsa&quot;</span>,<br>					<span class="hljs-string">&quot;mountPoint&quot;</span>: <span class="hljs-string">&quot;A:&quot;</span>,<br>					<span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;worisur&quot;</span>,<br>					<span class="hljs-string">&quot;password&quot;</span>: <span class="hljs-string">&quot;&quot;</span>,<br>					<span class="hljs-string">&quot;pid&quot;</span>: <span class="hljs-number">4624</span>,<br>					<span class="hljs-string">&quot;port&quot;</span>: <span class="hljs-number">50011</span>,<br>					<span class="hljs-string">&quot;preferredMountPoint&quot;</span>: <span class="hljs-literal">null</span>,<br>					<span class="hljs-string">&quot;status&quot;</span>: <span class="hljs-string">&quot;connected&quot;</span>,<br>					<span class="hljs-string">&quot;user&quot;</span>: <span class="hljs-string">&quot;用户&quot;</span>,<br>					<span class="hljs-string">&quot;uuid&quot;</span>: <span class="hljs-string">&quot;63308430-7dbf-4c8a-9fe5-a6c4bd28b595&quot;</span><br>				&#125;<br>			]<br>		&#125;,<br>		<span class="hljs-string">&quot;Settings&quot;</span>: &#123;<br>			<span class="hljs-string">&quot;settings&quot;</span>: &#123;<br>				<span class="hljs-string">&quot;sshfsBinary&quot;</span>: <span class="hljs-string">&quot;C:<span class="hljs-char escape_">\\</span>Atools<span class="hljs-char escape_">\\</span>network<span class="hljs-char escape_">\\</span>sshfs<span class="hljs-char escape_">\\</span>sshfs-win<span class="hljs-char escape_">\\</span>bin<span class="hljs-char escape_">\\</span>sshfs.exe&quot;</span>,<br>				<span class="hljs-string">&quot;startupWithOS&quot;</span>: <span class="hljs-literal">true</span>,<br>				<span class="hljs-string">&quot;displayTrayMessageOnClose&quot;</span>: <span class="hljs-literal">true</span>,<br>				<span class="hljs-string">&quot;processTrackTimeout&quot;</span>: <span class="hljs-number">15</span>,<br>				<span class="hljs-string">&quot;showDebugPanel&quot;</span>: <span class="hljs-literal">false</span><br>			&#125;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
                 
               </div>
             
@@ -311,12 +318,12 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
+  <a href="/categories/ssh/" class="category-chain-item">ssh</a>
   
   
     <span>></span>
     
-  <a href="/categories/Linux/kvm/" class="category-chain-item">kvm</a>
+  <a href="/categories/ssh/sshfs/" class="category-chain-item">sshfs</a>
   
   
 
@@ -333,9 +340,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/Linux/">#Linux</a>
+        <a href="/tags/ssh/">#ssh</a>
       
-        <a href="/tags/kvm/">#kvm</a>
+        <a href="/tags/sshfs/">#sshfs</a>
       
     </div>
   
@@ -347,8 +354,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>kvm 显卡直通</div>
-      <div>https://imiloo.github.io/2022/07/14/2022-07-14.kvm显卡直通/</div>
+      <div>sshfs配置</div>
+      <div>https://imiloo.github.io/2022/07/20/2022-07-20.sshfs/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年7月14日</div>
+          <div>2022年7月20日</div>
         </div>
       
       
@@ -390,18 +397,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/20/2022-07-20.sshfs/" title="sshfs配置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">sshfs配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/07/04/2022-07-04.gentoo%E9%85%8D%E7%BD%AE%E6%89%8B%E5%86%8C/" title="Gentoo 配置手册">
-                        <span class="hidden-mobile">Gentoo 配置手册</span>
+                      <a href="/2022/07/14/2022-07-14.kvm%E6%98%BE%E5%8D%A1%E7%9B%B4%E9%80%9A/" title="kvm 显卡直通">
+                        <span class="hidden-mobile">kvm 显卡直通</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
